@@ -1,3 +1,4 @@
+```markdown
 # 🛡️ BioGuard: AI-Powered Biometric Attendance System
 
 A full-stack facial recognition system that automates attendance logging using a **React** frontend and a **FastAPI** neural engine.
@@ -27,29 +28,35 @@ attendance_system/
     ├── src/             # React logic & UI
     └── package.json     # JS dependencies
 
-⚙️ Setup & Installation
-1. Backend Setup
-
 ```
+
+## ⚙️ Setup & Installation
+
+### 1. Backend Setup
+
+```bash
 cd backend
 pip install fastapi uvicorn deepface tf-keras opencv-python pandas
 python app.py
+
 ```
 
-2. Frontend Setup
-```
+### 2. Frontend Setup
+
+```bash
 cd frontend
 npm install
 npm start
+
 ```
 
-📊 How it Works
-Capture: The React frontend captures a frame from the webcam every 2 seconds.
+## 📊 How it Works
 
-Transfer: The frame is sent as a Blob via an Axios POST request to the /verify endpoint.
+1. **Capture:** The React frontend captures a frame from the webcam every 2 seconds.
+2. **Transfer:** The frame is sent as a Blob via an Axios POST request to the `/verify` endpoint.
+3. **Analysis:** The Backend uses DeepFace to calculate the **Euclidean Distance** between the live frame and the `images/` database.
+4. **Action:** If the distance is below the threshold (**0.50**), the system logs the entry and triggers a success state in the UI.
 
-Analysis: The Backend uses DeepFace to calculate the "Euclidean Distance" between the live frame and the images/ database.
+---
 
-Action: If the distance is below the threshold (0.50), the system logs the entry and triggers a success state in the UI.
-
-Created by Sethu
+*Created by [Sethu*](https://github.com/codes-by-sethu)
