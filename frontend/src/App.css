@@ -1,0 +1,74 @@
+/* Main Layout */
+.app-container {
+  background-color: #0d1117; /* Dark GitHub-style background */
+  color: #c9d1d9;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title {
+  font-size: 2rem;
+  letter-spacing: 4px;
+  color: #58a6ff;
+  text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+  margin-bottom: 20px;
+}
+
+/* Webcam Container */
+.webcam-box {
+  position: relative;
+  border: 3px solid #30363d;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.4s ease;
+}
+
+/* Red glow when scanning, Green when matched */
+.webcam-box.match {
+  border-color: #238636; /* Success Green */
+  box-shadow: 0 0 20px rgba(35, 134, 54, 0.4);
+}
+
+/* The Hollywood Scan Line */
+.scan-line {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #58a6ff, transparent);
+  box-shadow: 0 0 10px #58a6ff;
+  z-index: 5;
+  animation: moveLine 3s infinite linear;
+}
+
+@keyframes moveLine {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
+
+/* Information Panel */
+.info-display {
+  margin-top: 30px;
+  padding: 15px 40px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  min-width: 300px;
+  text-align: center;
+}
+
+.info-display h3 {
+  margin: 0;
+  font-weight: 400;
+  color: #8b949e;
+}
+
+.status-text {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 5px;
+}
