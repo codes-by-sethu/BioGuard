@@ -1,4 +1,3 @@
-```markdown
 # 🛡️ BioGuard: AI-Powered Biometric Attendance System
 
 A full-stack facial recognition system that automates attendance logging using a **React** frontend and a **FastAPI** neural engine.
